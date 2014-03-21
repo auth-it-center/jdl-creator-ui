@@ -1,0 +1,7 @@
+Graphical JDL-Creator
+v. 0.0.1
+
+Created by Stefanos Laskaridis
+	for the Grid Infrastructure
+
+Licenced under GNU Lesser General Public Licence.

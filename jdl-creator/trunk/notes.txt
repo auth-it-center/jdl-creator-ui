@@ -1,0 +1,13 @@
+Notes on jdl-creator:
+1. JDL-ControlFIle: Here the constants of choices are defined.
+	For example, the choices that you can make are included in this file
+	
+2. JDL-Field: An object of this class represents the result of a given query to write inside the jdl-file.
+	Member variables of the JDL-Field class
+		* JDL (dictionary)
+			Key: field
+			Value: value
+		* tags
+		
+	__init__(self, field, value, tag, comment, JDL_tag)
+		->
