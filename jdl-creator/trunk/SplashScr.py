@@ -5,7 +5,7 @@ from Tkinter import *
 import time
 
 class SplashScreen(Frame):
-    def __init__(self, master=None, width=0.3, height=0.25, useFactor=True):
+    def __init__(self, master=None, width=0.4, height=0.25, useFactor=True):
         Frame.__init__(self, master)
         self.pack(side=TOP, fill=BOTH, expand=YES)
 
