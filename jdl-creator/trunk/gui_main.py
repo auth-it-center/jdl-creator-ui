@@ -7,6 +7,8 @@ import tkFileDialog
 import time
 import MainWindowFrame
 from AboutWindowFrame import *
+import sidebarFrame
+import buttonFrame
 
 
 class GuiHandler:
@@ -22,6 +24,10 @@ class GuiHandler:
         self.splashWindow = Toplevel(self.root)
         self.mySplash = SplashScr.SplashScreen(self.splashWindow)
         self.mySplash.destroySplashScreen(5)
+
+
+        self.sidebarFrame = sidebarFrame()
+        self.buttonFrame = buttonFrame()
 
         # set the mainWindow position
         width = 0.5

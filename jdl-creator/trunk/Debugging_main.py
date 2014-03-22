@@ -18,13 +18,17 @@ from JDL_ControlFile import *
 
 def MakeArgList(Menu, JDL_List):
     """Makes the Menu to JDL_Field"""
-    NewDict = Menu.copy()
-    for lst in Menu:
-        NewDict[lst] = {}
-        for ils in Menu[lst]:
-            NewDict[lst][ils] = JDL_List[ils]
-    print NewDict
-    return NewDict
+    # NewDict = Menu.copy()
+    # for lst in Menu:
+    #     NewDict[lst] = {}
+    #     for ils in Menu[lst]:
+    #         NewDict[lst][ils] = JDL_List[ils]
+    # print NewDict
+    # return NewDict
 
 
-MakeArgList(Menu, JDL_List)
+
+# MakeArgList(Menu, JDL_List)
+
+if __name__=="__main__":
+    print len(JDL_List)
