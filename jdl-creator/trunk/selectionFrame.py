@@ -4,6 +4,7 @@ from Tkinter import *
 menu = JDL_ControlFile.Menu
 
 class selectionFrame(Frame):
+	checks = []
 	
 	def __init__(self, master = None):
 		Frame.__init__(self,master)
@@ -22,10 +23,17 @@ class selectionFrame(Frame):
 			category_options = self.getOptions(category)
 			r = 1
 			for option in category_options:
-				label = Checkbutton(self, text=option, font=("Arial", 14)).grid(row = r, column = c)
+				var = IntVar()
+				label = Checkbutton(self, text=option, font=("Arial", 14), variable = var, command = self.test).grid(row = r, column = c)
+				self.checks.append(var)
 				r = r + 1
 			c = c + 1
-		
+	
+	def test(self):
+		for item in self.checks:
+			print item.get()
+		print 
+		print 
 		
 	def getCategories(self):
 		Categories = []
