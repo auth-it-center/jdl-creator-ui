@@ -19,21 +19,24 @@ class selectionFrame(Frame):
 		categories = self.getCategories()
 		c = 0
 		for category in categories:
-			label = Label(self, text=category[3:-1], font=("Arial", 16)).grid(row = 0, column = c, ipadx=15)
+			label = Label(self, text=category[3:-1], font=("Arial", 16, "bold")).grid(row = 0, column = c, ipadx=15)
 			category_options = self.getOptions(category)
 			r = 1
 			for option in category_options:
 				var = IntVar()
-				check = Checkbutton(self, text=option, font=("Arial", 14), variable = var, command = self.test).grid(row = r, column = c)
+				check = Checkbutton(self, text=option, font=("Arial", 14), variable = var, command = self.getNumbersOfOptions).grid(row = r, column = c)
 				self.checks.append(var)
 				r = r + 1
 			c = c + 1
-	
-	def test(self):
+		
+	def getNumbersOfOptions(self):
+		options = []
+		counter = 0
 		for item in self.checks:
-			print item.get()
-		print 
-		print 
+			counter = counter + 1
+			if item.get():
+				options.append(counter)
+		print options
 		
 	def getCategories(self):
 		Categories = []
