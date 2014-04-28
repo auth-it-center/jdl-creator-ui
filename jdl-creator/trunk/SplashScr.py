@@ -61,4 +61,7 @@ if __name__ == '__main__':
     mySP = SplashScreen(mainWindow)
     mySP.populateSplashScreen()
     mySP.destroySplashScreen(5)
+    mainWindow.attributes('-topmost', 1)
+    mainWindow.update()
+    mainWindow.attributes('-topmost', 0)
     mainWindow.mainloop()
