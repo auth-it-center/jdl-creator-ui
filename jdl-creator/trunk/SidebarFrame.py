@@ -10,8 +10,11 @@ class SidebarFrame(Frame):
         Frame.__init__(self, master)
         print "Master state: "+master.state()
         self.myGuiHandler = myGuiHandler # has to know the gui handler object to call methods
+        self.buttonTags = ["New File", "Help", "About"]
         self.buttons = []
-        self.dictButtons = {"New File":Button(master=self), "Help":Button(master=self), "About":Button(master=self)}
+        for i in xrange(0,3):
+            self.buttons.append(Button(master=self))
+        # self.dictButtons = {"New File":Button(master=self), "Help":Button(master=self), "About":Button(master=self)}
         self.populateFrame()
         self.bindButtonCommands()
 
@@ -22,9 +25,9 @@ class SidebarFrame(Frame):
         """
         i=0
         # you may need to change that for the correct order of buttons
-        for entry, button in self.dictButtons.iteritems():
-            i+=1
-            button.config(text=entry, width=8)
+        for button in self.buttons:
+            button.config(text=self.buttonTags[i], width=8)
+            i=i+1
             button.grid(row=i+1, column=0, pady=10, padx=3)
 
         self.titleLabel = Label(master=self, text="My Actions", justify=CENTER, font=('Arial', 32), pady=10,
@@ -66,13 +69,13 @@ class SidebarFrame(Frame):
     def bindButtonCommands(self):
         """ binds the buttons' functionality with the respective callabacks
         """
-        dictCommands = {}
-        for entry, button in self.dictButtons.iteritems():
-            if entry == "New File":
+        # dictCommands = {}
+        for button in self.buttons:
+            if button.config('text')[-1] == "New File":
                 button.config(command=self.newFile)
-            elif entry == "Help":
+            elif button.config('text')[-1] == "Help":
                 button.config(command=self.showHelp)
-            elif entry == "About":
+            elif button.config('text')[-1] == "About":
                 button.config(command=self.showAbout)
 
 
